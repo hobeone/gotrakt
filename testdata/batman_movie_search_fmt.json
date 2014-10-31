@@ -1,0 +1,841 @@
+[
+    {
+        "certification": "PG-13",
+        "genres": [
+            "Action",
+            "Fantasy"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/316.2.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/316.2.jpg"
+        },
+        "imdb_id": "tt0096895",
+        "overview": "The Dark Knight of Gotham City begins his war on crime with his first major enemy being the clownishly homicidal Joker, who has seized control of Gotham's underworld.",
+        "ratings": {
+            "hated": 179,
+            "loved": 2205,
+            "percentage": 78,
+            "votes": 2384
+        },
+        "released": 614502000,
+        "runtime": 126,
+        "tagline": "Have you ever danced with the devil in the pale moonlight?",
+        "title": "Batman",
+        "tmdb_id": 268,
+        "trailer": "",
+        "url": "http://trakt.tv/movie/batman-1989",
+        "year": 1989
+    },
+    {
+        "certification": "PG",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Fantasy",
+            "Science Fiction"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/8524.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/8524.jpg"
+        },
+        "imdb_id": "tt0060153",
+        "overview": "The Dynamic Duo faces four super-villains who plan to hold the world for ransom with the help of a secret invention that instantly dehydrates people.",
+        "ratings": {
+            "hated": 33,
+            "loved": 140,
+            "percentage": 69,
+            "votes": 173
+        },
+        "released": -108061200,
+        "runtime": 105,
+        "tagline": "He's Here Big As Life In A Real Bat-Epic",
+        "title": "Batman",
+        "tmdb_id": 2661,
+        "trailer": "http://youtube.com/watch?v=whgBnumr3QQ",
+        "url": "http://trakt.tv/movie/batman-1966",
+        "year": 1966
+    },
+    {
+        "certification": "",
+        "genres": [
+            ""
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart-dark.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/186857.jpg"
+        },
+        "imdb_id": "tt0035665",
+        "overview": "Japanese spymaster Prince Daka operates a covert espionage organization located in Metropolis' now-deserted Little Tokyo which turns American scientists into pliable zombies.",
+        "ratings": {
+            "hated": 2,
+            "loved": 2,
+            "percentage": 53,
+            "votes": 4
+        },
+        "released": -835117200,
+        "runtime": 260,
+        "tagline": "A HUNDRED TIMES MORE THRILLING ON THE SCREEN!",
+        "title": "Batman",
+        "tmdb_id": 125249,
+        "trailer": "",
+        "url": "http://trakt.tv/movie/batman-1943",
+        "year": 1943
+    },
+    {
+        "certification": "G",
+        "genres": [
+            ""
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/233567.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/233567.jpg"
+        },
+        "imdb_id": "",
+        "overview": "Terry faces off against a much younger Batman",
+        "ratings": {
+            "hated": 0,
+            "loved": 2,
+            "percentage": 60,
+            "votes": 2
+        },
+        "released": 1397890800,
+        "runtime": 1,
+        "tagline": "",
+        "title": "Batman Beyond Darwyn Cooke's Batman 75th Anniversary Short",
+        "tmdb_id": 269246,
+        "trailer": "",
+        "url": "http://trakt.tv/movie/batman-beyond-darwyn-cookes-batman-75th-anniversary-short-2014",
+        "year": 2014
+    },
+    {
+        "certification": "",
+        "genres": [
+            ""
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart-dark.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/221340.jpg"
+        },
+        "imdb_id": "tt1006835",
+        "overview": "Behind the scenes documentary highlighting production design, props &amp; gadgets, batmobile/batsuit design, and the music of the 1989 Batman.",
+        "ratings": {
+            "hated": 2,
+            "loved": 5,
+            "percentage": 64,
+            "votes": 7
+        },
+        "released": 1120460400,
+        "runtime": 53,
+        "tagline": "",
+        "title": "Batman: Beyond Batman",
+        "tmdb_id": 204649,
+        "trailer": "",
+        "url": "http://trakt.tv/movie/batman-beyond-batman-2005",
+        "year": 2005
+    },
+    {
+        "certification": "PG-13",
+        "genres": [
+            "Action",
+            "Crime",
+            "Drama"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/957.1.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/957.1.jpg"
+        },
+        "imdb_id": "tt0372784",
+        "overview": "Driven by tragedy, billionaire Bruce Wayne dedicates his life to uncovering and defeating the corruption that plagues his home, Gotham City.  Unable to work within the system, he instead creates a new identity, a symbol of fear for the criminal underworld - The Batman.",
+        "ratings": {
+            "hated": 203,
+            "loved": 9454,
+            "percentage": 86,
+            "votes": 9657
+        },
+        "released": 1118818800,
+        "runtime": 140,
+        "tagline": "Evil fears the knight.",
+        "title": "Batman Begins",
+        "tmdb_id": 272,
+        "trailer": "http://youtube.com/watch?v=lu2ecPMX0kI",
+        "url": "http://trakt.tv/movie/batman-begins-2005",
+        "year": 2005
+    },
+    {
+        "certification": "PG-13",
+        "genres": [
+            "Action",
+            "Animation",
+            "Crime",
+            "Thriller"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/231562.1.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/231562.1.jpg"
+        },
+        "imdb_id": "tt3139086",
+        "overview": "Based on the hit video game series, Batman must find a bomb planted by the Joker while dealing with a mysterious team of villains called, The Suicide Squad.",
+        "ratings": {
+            "hated": 19,
+            "loved": 427,
+            "percentage": 79,
+            "votes": 446
+        },
+        "released": 1407826800,
+        "runtime": 75,
+        "tagline": "Get ready to root for the bad guys.",
+        "title": "Batman: Assault on Arkham",
+        "tmdb_id": 242643,
+        "trailer": "http://youtube.com/watch?v=-6abltUcric",
+        "url": "http://trakt.tv/movie/batman-assault-on-arkham-2014",
+        "year": 2014
+    },
+    {
+        "certification": "PG-13",
+        "genres": [
+            "Action",
+            "Animation"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/203167.4.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/203167.4.jpg"
+        },
+        "imdb_id": "tt2313197",
+        "overview": "Batman has not been seen for ten years. A new breed of criminal ravages Gotham City, forcing 55-year-old Bruce Wayne back into the cape and cowl. But, does he still have what it takes to fight crime in a new era?",
+        "ratings": {
+            "hated": 36,
+            "loved": 1038,
+            "percentage": 83,
+            "votes": 1074
+        },
+        "released": 1348556400,
+        "runtime": 76,
+        "tagline": "Old heroes never die. They just get darker.",
+        "title": "Batman: The Dark Knight Returns, Part 1",
+        "tmdb_id": 123025,
+        "trailer": "http://youtube.com/watch?v=0osGZGwFNkk",
+        "url": "http://trakt.tv/movie/batman-the-dark-knight-returns-part-1-2012",
+        "year": 2012
+    },
+    {
+        "certification": "PG-13",
+        "genres": [
+            "Action",
+            "Animation"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/210128.1.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/210128.1.jpg"
+        },
+        "imdb_id": "tt2166834",
+        "overview": "Batman has stopped the reign of terror that The Mutants had cast upon his city.  Now an old foe wants a reunion and the government wants The Man of Steel to put a stop to Batman.",
+        "ratings": {
+            "hated": 20,
+            "loved": 654,
+            "percentage": 84,
+            "votes": 674
+        },
+        "released": 1359446400,
+        "runtime": 78,
+        "tagline": "Justice Returns... Vengeance Returns... Redemption Comes to Gotham",
+        "title": "Batman: The Dark Knight Returns, Part 2",
+        "tmdb_id": 142061,
+        "trailer": "http://youtube.com/watch?v=MUyQlvdbANQ",
+        "url": "http://trakt.tv/movie/batman-the-dark-knight-returns-part-2-2013",
+        "year": 2013
+    },
+    {
+        "certification": "PG-13",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Animation",
+            "Crime",
+            "Science Fiction"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/182614.1.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/182614.1.jpg"
+        },
+        "imdb_id": "tt1672723",
+        "overview": "Two men come to Gotham City: Bruce Wayne after years abroad feeding his lifelong obsession for justice and Jim Gordon after being too honest a cop with the wrong people elsewhere. After learning painful lessons about the city's corruption on its streets and police department respectively, this pair learn how to fight back their own way. With that, Gotham's evildoers from top to bottom are terrorized by the mysterious Batman and the equally heroic Gordon is assigned to catch him by comrades who both hate and fear him themselves. In the ensuing manhunt, both find much in common as the seeds of an unexpected friendship are laid with additional friends and rivals helping to start the legend.",
+        "ratings": {
+            "hated": 18,
+            "loved": 396,
+            "percentage": 80,
+            "votes": 414
+        },
+        "released": 1318921200,
+        "runtime": 64,
+        "tagline": "A merciless crime turns a man into an outlaw.",
+        "title": "Batman: Year One",
+        "tmdb_id": 69735,
+        "trailer": "http://youtube.com/watch?v=8o8O3E9XSgo",
+        "url": "http://trakt.tv/movie/batman-year-one-2011",
+        "year": 2011
+    },
+    {
+        "certification": "PG-13",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Animation",
+            "Mystery",
+            "Science Fiction"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/1688.1.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/1688.1.jpg"
+        },
+        "imdb_id": "tt1569923",
+        "overview": "Batman faces his ultimate challenge as the mysterious Red Hood takes Gotham City by firestorm. One part vigilante, one part criminal kingpin, Red Hood begins cleaning up Gotham with the efficiency of Batman, but without following the same ethical code.",
+        "ratings": {
+            "hated": 20,
+            "loved": 549,
+            "percentage": 82,
+            "votes": 569
+        },
+        "released": 1280214000,
+        "runtime": 75,
+        "tagline": "Dare to Look Beneath the Hood.",
+        "title": "Batman: Under the Red Hood",
+        "tmdb_id": 40662,
+        "trailer": "http://youtube.com/watch?v=A2c9MsP3OVs",
+        "url": "http://trakt.tv/movie/batman-under-the-red-hood-2010",
+        "year": 2010
+    },
+    {
+        "certification": "PG-13",
+        "genres": [
+            "Action",
+            "Crime",
+            "Fantasy",
+            "Science Fiction",
+            "Thriller"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/747.1.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/747.1.jpg"
+        },
+        "imdb_id": "tt0103776",
+        "overview": "Having defeated the Joker, Batman now faces the Penguin - a warped and deformed individual who is intent on being accepted into Gotham society. Crooked businessman Max Schreck is coerced into helping him become Mayor of Gotham and they both attempt to expose Batman in a different light. Selina Kyle, Max's secretary, is thrown from the top of a building and is transformed into Catwoman - a mysterious figure who has the same personality disorder as Batman. Batman must attempt to clear his name, all the time deciding just what must be done with the Catwoman.",
+        "ratings": {
+            "hated": 205,
+            "loved": 1527,
+            "percentage": 73,
+            "votes": 1732
+        },
+        "released": 708937200,
+        "runtime": 126,
+        "tagline": "The Bat, the Cat, the Penguin.",
+        "title": "Batman Returns",
+        "tmdb_id": 364,
+        "trailer": "http://youtube.com/watch?v=YlTfanv7vE0",
+        "url": "http://trakt.tv/movie/batman-returns-1992",
+        "year": 1992
+    },
+    {
+        "certification": "PG-13",
+        "genres": [
+            "Action",
+            "Crime",
+            "Fantasy",
+            "Science Fiction"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/992.1.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/992.1.jpg"
+        },
+        "imdb_id": "tt0112462",
+        "overview": "The Dark Knight of Gotham City confronts a dastardly duo: Two-Face and the Riddler. Formerly District Attorney Harvey Dent, Two-Face believes Batman caused the courtroom accident which left him disfigured on one side. And Edward Nygma, computer-genius and former employee of millionaire Bruce Wayne, is out to get the philanthropist; as The Riddler. Former circus acrobat Dick Grayson, his family killed by Two-Face, becomes Wayne's ward and Batman's new partner Robin.",
+        "ratings": {
+            "hated": 559,
+            "loved": 661,
+            "percentage": 56,
+            "votes": 1220
+        },
+        "released": 803199600,
+        "runtime": 121,
+        "tagline": "Courage now, truth always...",
+        "title": "Batman Forever",
+        "tmdb_id": 414,
+        "trailer": "http://youtube.com/watch?v=b_KllgySsPo",
+        "url": "http://trakt.tv/movie/batman-forever-1995",
+        "year": 1995
+    },
+    {
+        "certification": "PG-13",
+        "genres": [
+            "Action",
+            "Crime",
+            "Fantasy",
+            "Science Fiction",
+            "Thriller"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/991.1.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/991.1.jpg"
+        },
+        "imdb_id": "tt0118688",
+        "overview": "Along with crime-fighting partner Robin and new recruit Batgirl, Batman battles the dual threat of frosty genius Mr. Freeze and homicidal horticulturalist Poison Ivy. Freeze plans to put Gotham City on ice, while Ivy tries to drive a wedge between the dynamic duo.",
+        "ratings": {
+            "hated": 735,
+            "loved": 415,
+            "percentage": 46,
+            "votes": 1150
+        },
+        "released": 866790000,
+        "runtime": 125,
+        "tagline": "Strength. Courage. Honor. And loyalty.",
+        "title": "Batman & Robin",
+        "tmdb_id": 415,
+        "trailer": "http://youtube.com/watch?v=ORAGHEV890Y",
+        "url": "http://trakt.tv/movie/batman-and-robin-1997",
+        "year": 1997
+    },
+    {
+        "certification": "PG-13",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Animation"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/1049.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/1049.jpg"
+        },
+        "imdb_id": "tt1117563",
+        "overview": "Explore Bruce Wayne's transition from his beginning as a tormented vigilantee to The Dark Knight of a crumbling metropolis with six distinct chapters but intended to be viewed as a whole.",
+        "ratings": {
+            "hated": 25,
+            "loved": 239,
+            "percentage": 74,
+            "votes": 264
+        },
+        "released": 1215500400,
+        "runtime": 75,
+        "tagline": "Get Ready... to Rage Against Evil.",
+        "title": "Batman: Gotham Knight",
+        "tmdb_id": 13851,
+        "trailer": "http://youtube.com/watch?v=0beX8b4zX5E",
+        "url": "http://trakt.tv/movie/batman-gotham-knight-2008",
+        "year": 2008
+    },
+    {
+        "certification": "PG-13",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Animation",
+            "Children",
+            "Family",
+            "Fantasy",
+            "Science Fiction"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/8513.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/8513.jpg"
+        },
+        "imdb_id": "tt0233298",
+        "overview": "The Joker is back with a vengeance, and Gotham's newest Dark Knight needs answers as he stands alone to face Gotham's most infamous Clown Prince of Crime.",
+        "ratings": {
+            "hated": 10,
+            "loved": 161,
+            "percentage": 80,
+            "votes": 171
+        },
+        "released": 976608000,
+        "runtime": 74,
+        "tagline": "This Time, The Joker Is Wild",
+        "title": "Batman Beyond: Return of the Joker",
+        "tmdb_id": 16234,
+        "trailer": "http://youtube.com/watch?v=jTSlHYxAnEs",
+        "url": "http://trakt.tv/movie/batman-beyond-return-of-the-joker-2000",
+        "year": 2000
+    },
+    {
+        "certification": "PG",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Animation",
+            "Family"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/6816.1.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/6816.1.jpg"
+        },
+        "imdb_id": "tt0106364",
+        "overview": "An old flame of Bruce Wayne's strolls into town, re-heating up the romance between the two. At the same time, a mass murderer with an axe for one hand begins systematically eliminating Gotham's crime bosses. Due to the person's dark appearance, he is mistaken for Batman. Now on the run, Batman must solve the mystery and deal with the roman and deal with the romance between him and Andrea Beaumont.",
+        "ratings": {
+            "hated": 3,
+            "loved": 192,
+            "percentage": 83,
+            "votes": 195
+        },
+        "released": 756806400,
+        "runtime": 76,
+        "tagline": "The Dark Knight fights to save Gotham city from its deadliest enemy.",
+        "title": "Batman: Mask of the Phantasm",
+        "tmdb_id": 14919,
+        "trailer": "http://youtube.com/watch?v=86RkglA5nMI",
+        "url": "http://trakt.tv/movie/batman-mask-of-the-phantasm-1993",
+        "year": 1993
+    },
+    {
+        "certification": "PG",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Animation",
+            "Family",
+            "Fantasy",
+            "Science Fiction"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/14125.1.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/14125.1.jpg"
+        },
+        "imdb_id": "tt0346578",
+        "overview": "A new vigilante, Batwoman, is wreaking havoc in Gotham City. The dynamic duo must discover her true identity.",
+        "ratings": {
+            "hated": 11,
+            "loved": 69,
+            "percentage": 73,
+            "votes": 80
+        },
+        "released": 1066719600,
+        "runtime": 74,
+        "tagline": "",
+        "title": "Batman: Mystery of the Batwoman",
+        "tmdb_id": 21683,
+        "trailer": "http://youtube.com/watch?v=Qe9evYaBZ9M",
+        "url": "http://trakt.tv/movie/batman-mystery-of-the-batwoman-2003",
+        "year": 2003
+    },
+    {
+        "certification": "",
+        "genres": [
+            "Action",
+            "Animation",
+            "Crime"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/9770.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/9770.jpg"
+        },
+        "imdb_id": "tt0143127",
+        "overview": "When a desperate Mr. Freeze, to save his dying wife, kidnaps Barbara (Batgirl) Gordan as an involuntary organ donor, Batman and Robin must find her before the operation can begin.",
+        "ratings": {
+            "hated": 2,
+            "loved": 71,
+            "percentage": 76,
+            "votes": 73
+        },
+        "released": 890121600,
+        "runtime": 70,
+        "tagline": "",
+        "title": "Batman & Mr. Freeze: SubZero",
+        "tmdb_id": 15805,
+        "trailer": "http://youtube.com/watch?v=u7yHdSyCqxE",
+        "url": "http://trakt.tv/movie/batman-and-mr-freeze-subzero-1998",
+        "year": 1998
+    },
+    {
+        "certification": "NR",
+        "genres": [
+            "Documentary"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/176298.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/176298.jpg"
+        },
+        "imdb_id": "tt1265589",
+        "overview": "Delve into the world of Batman and the vigilante justice that he brought to the city of Gotham. Batman is a man who, after experiencing great tragedy, devotes his life to an ideal--but what happens when one man takes on the evil underworld alone? Examine why Batman is who he is--and explore how a boy scarred by tragedy becomes a symbol of hope to everyone else.",
+        "ratings": {
+            "hated": 0,
+            "loved": 7,
+            "percentage": 81,
+            "votes": 7
+        },
+        "released": 1216105200,
+        "runtime": 45,
+        "tagline": "",
+        "title": "Batman Unmasked: The Psychology of the Dark Knight",
+        "tmdb_id": 29751,
+        "trailer": "",
+        "url": "http://trakt.tv/movie/batman-unmasked-the-psychology-of-the-dark-knight-2008",
+        "year": 2008
+    },
+    {
+        "certification": "",
+        "genres": [
+            "Action",
+            "Crime"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/165349.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/165349.jpg"
+        },
+        "imdb_id": "tt0374526",
+        "overview": "After the Joker escapes from Arkham Asylum, Batman catches up with him in a dark alley. But the Dark Knight isn\u2019t the only hunter prowling the streets.",
+        "ratings": {
+            "hated": 1,
+            "loved": 14,
+            "percentage": 84,
+            "votes": 15
+        },
+        "released": 1041408000,
+        "runtime": 8,
+        "tagline": "",
+        "title": "Batman: Dead End",
+        "tmdb_id": 31096,
+        "trailer": "",
+        "url": "http://trakt.tv/movie/batman-dead-end-2003",
+        "year": 2003
+    },
+    {
+        "certification": "PG-13",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Animation",
+            "Crime"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/226856.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/226856.jpg"
+        },
+        "imdb_id": "",
+        "overview": "From the chronicles of the DC Universe comes the sweeping saga of rebirth, revenge and redemption. Now, for the first time, witness the legend of The Dark Knight Returns presented as an over two-hour unabridged and seamless animated feature. Another night falls on Gotham City and with the darkness, out crawls the crime and villainy from the shadows. The days of the Batman and other noble super heroes are but faded memories; violence and despair are now the harbingers of our time. With the roving gangs and return of villains such as Harvey \u201cTwo-Face\u201d Dent and the Joker, an aged and weathered Bruce Wayne dons the mask and cape once more. With the brave, young Carrie Kelley at his side as Robin, the Dark Knight faces off against insurmountable odds, unforgettable battles and even the Man of Steel as he desperately fights to reclaim Gotham City.",
+        "ratings": {
+            "hated": 0,
+            "loved": 6,
+            "percentage": 93,
+            "votes": 6
+        },
+        "released": 1381215600,
+        "runtime": 156,
+        "tagline": "",
+        "title": "Batman: The Dark Knight Returns (Deluxe Edition)",
+        "tmdb_id": 229457,
+        "trailer": "",
+        "url": "http://trakt.tv/movie/batman-the-dark-knight-returns-deluxe-edition-2013",
+        "year": 2013
+    },
+    {
+        "certification": "",
+        "genres": [
+            "Action",
+            "Animation"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/197127.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/197127.jpg"
+        },
+        "imdb_id": "tt0982860",
+        "overview": "While escaping a dull party, Bruce Wayne finds Catwoman robbing a vault and gives chase as Batman.",
+        "ratings": {
+            "hated": 1,
+            "loved": 7,
+            "percentage": 70,
+            "votes": 8
+        },
+        "released": 1066719600,
+        "runtime": 6,
+        "tagline": "",
+        "title": "Batman: Chase Me",
+        "tmdb_id": 106583,
+        "trailer": "",
+        "url": "http://trakt.tv/movie/batman-chase-me-2003",
+        "year": 2003
+    },
+    {
+        "certification": "",
+        "genres": [
+            "Action",
+            "Animation"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/231641.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/231641.jpg"
+        },
+        "imdb_id": "tt3643208",
+        "overview": "Celebrating Batman\u2019s 75th anniversary, DC Entertainment and Warner Bros. Animation have debuted this new animated short for the cultural icon.",
+        "ratings": {
+            "hated": 0,
+            "loved": 7,
+            "percentage": 83,
+            "votes": 7
+        },
+        "released": 1397026800,
+        "runtime": 2,
+        "tagline": "",
+        "title": "Batman: Strange Days",
+        "tmdb_id": 264170,
+        "trailer": "",
+        "url": "http://trakt.tv/movie/batman-strange-days-2014",
+        "year": 2014
+    },
+    {
+        "certification": "",
+        "genres": [
+            "Action",
+            "Science Fiction",
+            "Thriller"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart_movies/193084.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/193084.jpg"
+        },
+        "imdb_id": "tt0041162",
+        "overview": "This 15-chapter serial pits Batman and Robin against The Wizard, who uses a device that allows him to control machinery to hold the city hostage.",
+        "ratings": {
+            "hated": 0,
+            "loved": 0,
+            "percentage": 0,
+            "votes": 0
+        },
+        "released": -650131200,
+        "runtime": 261,
+        "tagline": "",
+        "title": "Batman and Robin",
+        "tmdb_id": 93560,
+        "trailer": "http://youtube.com/watch?v=ZoUeUoWe42o",
+        "url": "http://trakt.tv/movie/batman-and-robin-1949",
+        "year": 1949
+    },
+    {
+        "certification": "",
+        "genres": [
+            ""
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart-dark.jpg",
+            "poster": "http://slurm.trakt.us/images/poster-dark.jpg"
+        },
+        "imdb_id": "",
+        "overview": "A fan made stop-motion film about Batman made with action dolls.",
+        "ratings": {
+            "hated": 0,
+            "loved": 0,
+            "percentage": 0,
+            "votes": 0
+        },
+        "released": 1325404800,
+        "runtime": 6,
+        "tagline": "",
+        "title": "Batman: The Dark Knightfall",
+        "tmdb_id": 129938,
+        "trailer": "",
+        "url": "http://trakt.tv/movie/batman-the-dark-knightfall-2012",
+        "year": 2012
+    },
+    {
+        "certification": "",
+        "genres": [
+            "Documentary"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart-dark.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/214567.jpg"
+        },
+        "imdb_id": "tt1781773",
+        "overview": "A look at the life of Bob Kane, the creator of Batman.",
+        "ratings": {
+            "hated": 0,
+            "loved": 0,
+            "percentage": 0,
+            "votes": 0
+        },
+        "released": 1215500400,
+        "runtime": 38,
+        "tagline": "",
+        "title": "Batman and Me: A Devotion to Destiny, the Bob Kane Story",
+        "tmdb_id": 170633,
+        "trailer": "",
+        "url": "http://trakt.tv/movie/batman-and-me-a-devotion-to-destiny-the-bob-kane-story-2008",
+        "year": 2008
+    },
+    {
+        "certification": "NR",
+        "genres": [
+            "Action",
+            "Animation",
+            "Family"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart-dark.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/180872.jpg"
+        },
+        "imdb_id": "tt0231237",
+        "overview": "Fueled by remorse and vengeance, a high schooler named Terry McGinnis revives the role of Batman. Under supervision of an elderly Bruce Wayne, he fights crime in a harsh futuristic Gotham.",
+        "ratings": {
+            "hated": 1,
+            "loved": 9,
+            "percentage": 73,
+            "votes": 10
+        },
+        "released": 915955200,
+        "runtime": 132,
+        "tagline": "A New Hero, For A New Era",
+        "title": "Batman Beyond: The Movie",
+        "tmdb_id": 64202,
+        "trailer": "",
+        "url": "http://trakt.tv/movie/batman-beyond-the-movie-1999",
+        "year": 1999
+    },
+    {
+        "certification": "",
+        "genres": [
+            "Animation"
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart-dark.jpg",
+            "poster": "http://slurm.trakt.us/images/posters_movies/231169.jpg"
+        },
+        "imdb_id": "",
+        "overview": "30 years have passed since Bruce Wayne survived Skynet's nuclear blasts in August of '97. Iron demons now roam the planet, and without the requirement to defend the innocent against crime and injustice, Wayne has seeked refuge in the bomb shelter that saved his life; the Batcave.  Having scavenged the wasteland for resources, he discovers the radio of a dead soldier. There is static over a frequency. Flesh and blood is rising up to the west. With The Stinger; a riot control vehicular unit built before the apocalypse along with a refitted bomb blast vest, Batman makes his way across what remains of the United States to join forces with the man determined to neutralize the electronic menace - John Conner.",
+        "ratings": {
+            "hated": 0,
+            "loved": 0,
+            "percentage": 0,
+            "votes": 0
+        },
+        "released": 1393056000,
+        "runtime": 5,
+        "tagline": "Mankind's exterminator has a new pest.",
+        "title": "Batman vs. The Terminator",
+        "tmdb_id": 257256,
+        "trailer": "http://youtube.com/watch?v=gDYyAAdtDfk",
+        "url": "http://trakt.tv/movie/batman-vs-the-terminator-2014",
+        "year": 2014
+    },
+    {
+        "certification": "",
+        "genres": [
+            ""
+        ],
+        "images": {
+            "fanart": "http://slurm.trakt.us/images/fanart-dark.jpg",
+            "poster": "http://slurm.trakt.us/images/poster-dark.jpg"
+        },
+        "imdb_id": "",
+        "overview": "Batman: Arkham Asylum is a 2009 action-adventure video game based on the DC Comics superhero, Batman. It was developed by Rocksteady Studios and published by Eidos Interactive in conjunction with Warner Bros. Interactive Entertainment for the PlayStation 3 and Xbox 360 video game consoles, and Microsoft Windows. It was released worldwide for consoles, beginning in North America on August 25, 2009, with a Microsoft Windows version following on September 15.",
+        "ratings": {
+            "hated": 0,
+            "loved": 0,
+            "percentage": 0,
+            "votes": 0
+        },
+        "released": 1249455600,
+        "runtime": 125,
+        "tagline": "",
+        "title": "Batman: Arkham Asylum",
+        "tmdb_id": 285315,
+        "trailer": "",
+        "url": "http://trakt.tv/movie/batman-arkham-asylum-2009",
+        "year": 2009
+    }
+]
