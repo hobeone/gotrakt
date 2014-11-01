@@ -12,6 +12,8 @@ import (
 // error (for instance, from json.SyntaxError.Offset) and returns the line, column,
 // and pretty-printed context around the error with an arrow indicating the exact
 // position of the syntax error.
+//
+// Taken from the Camlistore source
 func HighlightBytePosition(f io.Reader, pos int64) (line, col int, highlight string) {
 	line = 1
 	br := bufio.NewReader(f)

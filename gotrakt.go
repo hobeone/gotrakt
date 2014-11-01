@@ -1,31 +1,40 @@
 package gotrakt
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
+	"text/template"
 
 	"github.com/golang/glog"
 	"github.com/hobeone/gotrakt/httpclient"
 	"github.com/jmcvetta/napping"
 )
 
-//TODO: maybe change these to text.Template for named paramters?
 //https://trakt.tv/api-docs/search-shows
-const TvSearchURL = "/search/shows.json/%s?query=%s&limit=%d&seasons=true"
+var ShowSearchTempl = template.Must(
+	template.New("ShowSearch").Parse("{{.Host}}/search/shows.json/{{.APIKey|urlquery}}?query={{.Query | urlquery}}&limit={{.Limit|urlquery}}&seasons=true"),
+)
 
 //http://trakt.tv/api-docs/show-summary
-const TvSummaryURL = "/show/summary.json/%s/%s/extended"
+var ShowSummaryTmpl = template.Must(
+	template.New("ShowSummary").Parse("{{.Host}}/show/summary.json/{{.APIKey|urlquery}}/{{.Query | urlquery}}/extended"),
+)
 
 //https://trakt.tv/api-docs/show-season
-//We always use the TVDB ID for the query
-const TvSeasonURL = "/show/season.json/%s/%d/%d"
+var ShowSeasonTmpl = template.Must(
+	template.New("ShowSeason").Parse("{{.Host}}/show/season.json/{{.APIKey|urlquery}}/{{.Query | urlquery}}/{{.Season | urlquery}}"),
+)
 
 // https://trakt.tv/api-docs/search-movies
-const MovieSearchURL = "/search/movies.json/%s?query=%s&limit=%d"
+var MovieSearchTmpl = template.Must(
+	template.New("MovieSearch").Parse("{{.Host}}/search/movies.json/{{.APIKey|urlquery}}?query={{.Query | urlquery}}"),
+)
 
 // https://trakt.tv/api-docs/movie-summary
-// We use the IMDB ID for all summary queries
-const MovieSummaryURL = "/movie/summary.json/%s/%s"
+var MovieSummaryTmpl = template.Must(
+	template.New("MovieSummary").Parse("{{.Host}}/movie/summary.json/{{.APIKey|urlquery}}/query={{.Query | urlquery}}"),
+)
 
 // Base URL for TraktTV api
 const TraktTVBaseURL = "https://api.trakt.tv"
@@ -72,26 +81,42 @@ func (t *TraktTV) getWithErrorCheck(url string, result interface{}) error {
 	return err
 }
 
-func (t *TraktTV) genURL(u string, a ...interface{}) string {
-	fullURL := fmt.Sprintf("%s%s", t.BaseURL, u)
-	fullURL = fmt.Sprintf(fullURL, a...)
-	glog.Infof("Generated api url: %s", fullURL)
-	return fullURL
+func (t *TraktTV) getURLFromTemplate(tmpl *template.Template, args map[string]string) (string, error) {
+	args["APIKey"] = t.APIKey
+	args["Host"] = t.BaseURL
+	out := bytes.Buffer{}
+	err := tmpl.Execute(&out, args)
+	return out.String(), err
 }
 
 // GetShow returns a show and all of it's Seasons and Episodes
 func (t *TraktTV) GetShow(slugOrTvdbID string) (*Show, error) {
-	s := t.genURL(TvSummaryURL, t.APIKey, slugOrTvdbID)
+	args := map[string]string{
+		"Query": slugOrTvdbID,
+	}
+
+	apiURL, err := t.getURLFromTemplate(ShowSummaryTmpl, args)
 	result := &Show{}
-	err := t.getWithErrorCheck(s, result)
+	if err != nil {
+		return result, err
+	}
+
+	err = t.getWithErrorCheck(apiURL, result)
 	return result, err
 }
 
 // ShowSearch searches tv shows
 func (t *TraktTV) ShowSearch(name string) ([]Show, error) {
-	s := t.genURL(TvSearchURL, t.APIKey, name, 10)
+	args := map[string]string{
+		"Query": name,
+		"Limit": "10",
+	}
 	result := []Show{}
-	err := t.getWithErrorCheck(s, &result)
+	apiURL, err := t.getURLFromTemplate(ShowSearchTempl, args)
+	if err != nil {
+		return result, err
+	}
+	err = t.getWithErrorCheck(apiURL, &result)
 	return result, err
 }
 
@@ -108,10 +133,16 @@ func (t *TraktTV) ShowSeasons(slugOrTvdbID string, seasons []int) ([]Season, err
 			Episodes: []Episode{},
 		}
 
-		apiURL := t.genURL(TvSeasonURL, t.APIKey, slugOrTvdbID, season)
+		args := map[string]string{
+			"Query":  slugOrTvdbID,
+			"Season": string(season),
+		}
+		apiURL, err := t.getURLFromTemplate(ShowSeasonTmpl, args)
+		if err != nil {
+			return results, err
+		}
 
-		glog.Infof("Query for %s Season %d: %s\n", slugOrTvdbID, season, apiURL)
-		err := t.getWithErrorCheck(apiURL, results[i].Episodes)
+		err = t.getWithErrorCheck(apiURL, results[i].Episodes)
 		if err != nil {
 			return results, err
 		}
@@ -121,16 +152,28 @@ func (t *TraktTV) ShowSeasons(slugOrTvdbID string, seasons []int) ([]Season, err
 
 //MovieSearch searches Trakt.tv for movies matching the query
 func (t *TraktTV) MovieSearch(query string) ([]Movie, error) {
-	s := t.genURL(MovieSearchURL, t.APIKey, query, 10)
+	args := map[string]string{
+		"Query": query,
+	}
+	apiURL, err := t.getURLFromTemplate(MovieSearchTmpl, args)
 	res := []Movie{}
-	err := t.getWithErrorCheck(s, &res)
+	if err != nil {
+		return res, err
+	}
+	err = t.getWithErrorCheck(apiURL, &res)
 	return res, err
 }
 
-//GetMovieByIMDB searches Trakt.tv for movies matching the query
-func (t *TraktTV) GetMovieByIMDB(imdbID string) (*Movie, error) {
-	s := t.genURL(MovieSummaryURL, t.APIKey, imdbID)
+//GetMovie searches Trakt.tv for movies matching the query
+func (t *TraktTV) GetMovie(slugOrImdbID string) (*Movie, error) {
 	res := &Movie{}
-	err := t.getWithErrorCheck(s, res)
+	args := map[string]string{
+		"Query": slugOrImdbID,
+	}
+	apiURL, err := t.getURLFromTemplate(MovieSummaryTmpl, args)
+	if err != nil {
+		return res, err
+	}
+	err = t.getWithErrorCheck(apiURL, &res)
 	return res, err
 }

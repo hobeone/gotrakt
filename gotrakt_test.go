@@ -124,7 +124,7 @@ func TestMovieSummary(t *testing.T) {
 	trakt, _ := New("testing")
 	trakt.BaseURL = ts.URL
 
-	m, err := trakt.GetMovieByIMDB("tt0133093")
+	m, err := trakt.GetMovie("tt0133093")
 	if serr, ok := err.(*json.SyntaxError); ok {
 		line, col, highlight := HighlightBytePosition(f, serr.Offset)
 		t.Fatalf("Error (%s) at line %d, column %d (file offset %d):\n%s", err, line, col, serr.Offset, highlight)
