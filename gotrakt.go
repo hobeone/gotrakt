@@ -38,16 +38,28 @@ type TraktTV struct {
 	Session *napping.Session
 }
 
+type option func(*TraktTV)
+
 // New initializes and returns a new TraktTV struct
-func New(api string, options ...func(*TraktTV) error) (*TraktTV, error) {
-	t := TraktTV{
+func New(api string, options ...option) (*TraktTV, error) {
+	t := &TraktTV{
 		APIKey:  api,
 		BaseURL: TraktTVBaseURL,
 		Session: &napping.Session{
 			Client: httpclient.NewTimeoutClient(),
 		},
 	}
-	return &t, nil
+	for _, opt := range options {
+		opt(t)
+	}
+	return t, nil
+}
+
+// Session sets the session to use for talking to TraktTV
+func Session(sess *napping.Session) option {
+	return func(t *TraktTV) {
+		t.Session = sess
+	}
 }
 
 func (t *TraktTV) getWithErrorCheck(url string, result interface{}) error {

@@ -66,10 +66,10 @@ func TestHttpClient(t *testing.T) {
 	}
 	defer resp.Body.Close()
 
-	connectTimeout := (250 * time.Millisecond)
-	readWriteTimeout := (50 * time.Millisecond)
-
-	httpClient = NewTimeoutClient(connectTimeout, readWriteTimeout)
+	httpClient = NewTimeoutClient(
+		ConnectTimeout(250*time.Millisecond),
+		ReadWriteTimeout(50*time.Millisecond),
+	)
 
 	resp, err = httpClient.Do(req)
 	if err == nil {
