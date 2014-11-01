@@ -1,5 +1,17 @@
 package gotrakt
 
+import "fmt"
+
+//APIError represents errors that the Trakt.tv api may return
+type APIError struct {
+	Status    string `json:"status"`
+	ErrorDesc string `json:"error"`
+}
+
+func (e APIError) Error() string {
+	return fmt.Sprintf("trakt.tv error: %s", e.ErrorDesc)
+}
+
 // Show is the show result from Trakt
 type Show struct {
 	Title         string            `json:"title"`

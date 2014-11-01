@@ -2,9 +2,14 @@ package gotrakt
 
 import (
 	"bytes"
+	"crypto/sha1"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
+	"io"
+	"net/url"
 	"text/template"
+	"time"
 
 	"github.com/golang/glog"
 	"github.com/hobeone/gotrakt/httpclient"
@@ -42,9 +47,10 @@ const TraktTVBaseURL = "https://api.trakt.tv"
 // TraktTV is the main struct used to query Trakt.tv.  Use NewTraktTV to
 // create new instances.
 type TraktTV struct {
-	APIKey  string
-	BaseURL string
-	Session *napping.Session
+	APIKey   string
+	BaseURL  string
+	Session  *napping.Session
+	Userinfo *url.Userinfo
 }
 
 type option func(*TraktTV)
@@ -55,7 +61,11 @@ func New(api string, options ...option) (*TraktTV, error) {
 		APIKey:  api,
 		BaseURL: TraktTVBaseURL,
 		Session: &napping.Session{
-			Client: httpclient.NewTimeoutClient(),
+			Log: false,
+			Client: httpclient.NewTimeoutClient(
+				httpclient.ConnectTimeout(10*time.Second),
+				httpclient.ReadWriteTimeout(10*time.Second),
+			),
 		},
 	}
 	for _, opt := range options {
@@ -80,12 +90,28 @@ func Host(host string) option {
 	}
 }
 
+// Userinfo configures the user and password information for API calls
+func Userinfo(username, password string) option {
+	h := sha1.New()
+	io.WriteString(h, password)
+	hashedPW := hex.EncodeToString(h.Sum(nil))
+
+	return func(t *TraktTV) {
+		t.Userinfo = url.UserPassword(username, hashedPW)
+	}
+}
+
 func (t *TraktTV) getWithErrorCheck(url string, result interface{}) error {
 	glog.Infof("Get query for %s\n", url)
-	response, err := t.Session.Get(url, &napping.Params{}, result, nil)
+	apiErr := &APIError{}
+	t.Session.Userinfo = t.Userinfo
+	response, err := t.Session.Get(url, &napping.Params{}, result, apiErr)
 	if serr, ok := err.(*json.SyntaxError); ok {
 		line, col, highlight := HighlightBytePosition(response.HttpResponse().Body, serr.Offset)
 		return fmt.Errorf("gotrackt: syntax error in response at line %d, column %d (file offset %d):\n%s", line, col, serr.Offset, highlight)
+	}
+	if apiErr.Status != "" {
+		return apiErr
 	}
 	return err
 }

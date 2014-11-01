@@ -44,9 +44,10 @@ func TestTvSearch(t *testing.T) {
 			}))
 	defer ts.Close()
 
-	trakt, _ := New("testing")
-	trakt.BaseURL = ts.URL
-
+	trakt, err := New("testing", Host(ts.URL))
+	if err != nil {
+		t.Fatalf("Unexpected error when creating new TraktTV: %s", err)
+	}
 	term := "Battlestar+Galactica"
 	res, err := trakt.ShowSearch(term)
 	if err != nil {
@@ -55,6 +56,28 @@ func TestTvSearch(t *testing.T) {
 	if len(res) != 5 {
 		t.Fatalf("Expecting 5 results, got %d", len(res))
 	}
+}
+
+func TestErrorHandling(t *testing.T) {
+	ts := httptest.NewServer(
+		http.HandlerFunc(
+			func(w http.ResponseWriter, r *http.Request) {
+				w.WriteHeader(http.StatusUnauthorized)
+				fmt.Fprintf(w, `{
+	"status": "failure",
+	"error": "invalid API key"
+}`)
+			}))
+	defer ts.Close()
+	trakt, err := New("testing", Host(ts.URL))
+	if err != nil {
+		t.Fatalf("Error creating TraktTV: %s", err)
+	}
+	_, err = trakt.GetShow("battlestar-galactica-2003")
+	if err == nil {
+		t.Fatal("Expected to get an error and got none.")
+	}
+
 }
 
 func TestTvSummary(t *testing.T) {
@@ -69,10 +92,15 @@ func TestTvSummary(t *testing.T) {
 				fmt.Fprintln(w, string(f))
 			}))
 	defer ts.Close()
-
-	trakt, _ := New("anyapi")
-	trakt.BaseURL = ts.URL
+	trakt, err := New("testing", Host(ts.URL))
+	if err != nil {
+		t.Fatalf("Error creating TraktTV: %s", err)
+	}
+	//tvshow, err := trakt.GetShow("battlestar-galactica-2003")
 	tvshow, err := trakt.GetShow("battlestar-galactica-2003")
+	if err != nil {
+		t.Fatalf("Error getting show summary: %s", err)
+	}
 
 	if tvshow.Title != "Battlestar Galactica (2003)" {
 		t.Fatalf("Expecting title of \"Battlestar Galactica (2003)\" got %s", tvshow.Title)
