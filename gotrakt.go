@@ -1,16 +1,15 @@
 package gotrakt
 
 import (
-	"bufio"
-	"bytes"
+	"encoding/json"
 	"fmt"
-	"io"
-	"strings"
 
 	"github.com/golang/glog"
+	"github.com/hobeone/gotrakt/httpclient"
 	"github.com/jmcvetta/napping"
 )
 
+//TODO: maybe change these to text.Template for named paramters?
 //https://trakt.tv/api-docs/search-shows
 const TvSearchURL = "/search/shows.json/%s?query=%s&limit=%d&seasons=true"
 
@@ -36,15 +35,29 @@ const TraktTVBaseURL = "https://api.trakt.tv"
 type TraktTV struct {
 	APIKey  string
 	BaseURL string
+	Session *napping.Session
 }
 
-// NewTraktTV initializes and returns a new TraktTV struct
-func NewTraktTV(api string, options ...func(*TraktTV) error) (*TraktTV, error) {
+// New initializes and returns a new TraktTV struct
+func New(api string, options ...func(*TraktTV) error) (*TraktTV, error) {
 	t := TraktTV{
 		APIKey:  api,
 		BaseURL: TraktTVBaseURL,
+		Session: &napping.Session{
+			Client: httpclient.NewTimeoutClient(),
+		},
 	}
 	return &t, nil
+}
+
+func (t *TraktTV) getWithErrorCheck(url string, result interface{}) error {
+	glog.Infof("Get query for %s\n", url)
+	response, err := t.Session.Get(url, &napping.Params{}, result, nil)
+	if serr, ok := err.(*json.SyntaxError); ok {
+		line, col, highlight := HighlightBytePosition(response.HttpResponse().Body, serr.Offset)
+		return fmt.Errorf("gotrackt: syntax error in response at line %d, column %d (file offset %d):\n%s", line, col, serr.Offset, highlight)
+	}
+	return err
 }
 
 func (t *TraktTV) genURL(u string, a ...interface{}) string {
@@ -54,8 +67,25 @@ func (t *TraktTV) genURL(u string, a ...interface{}) string {
 	return fullURL
 }
 
-//ShowEpisodes searches for a shows episode summaries by season.  You can optionally limit the query to just a given set of seasons.
-func (t *TraktTV) ShowEpisodes(slugOrTvdbID string, seasons []int) ([]Season, error) {
+// GetShow returns a show and all of it's Seasons and Episodes
+func (t *TraktTV) GetShow(slugOrTvdbID string) (*Show, error) {
+	s := t.genURL(TvSummaryURL, t.APIKey, slugOrTvdbID)
+	result := &Show{}
+	err := t.getWithErrorCheck(s, result)
+	return result, err
+}
+
+// ShowSearch searches tv shows
+func (t *TraktTV) ShowSearch(name string) ([]Show, error) {
+	s := t.genURL(TvSearchURL, t.APIKey, name, 10)
+	result := []Show{}
+	err := t.getWithErrorCheck(s, &result)
+	return result, err
+}
+
+//ShowSeasons searches for a shows episode summaries by season.  You can
+//optionally limit the query to just a given set of seasons.
+func (t *TraktTV) ShowSeasons(slugOrTvdbID string, seasons []int) ([]Season, error) {
 	results := make([]Season, len(seasons))
 	if len(seasons) == 0 {
 		return results, fmt.Errorf("must specify Which Seasons to get")
@@ -69,7 +99,7 @@ func (t *TraktTV) ShowEpisodes(slugOrTvdbID string, seasons []int) ([]Season, er
 		apiURL := t.genURL(TvSeasonURL, t.APIKey, slugOrTvdbID, season)
 
 		glog.Infof("Query for %s Season %d: %s\n", slugOrTvdbID, season, apiURL)
-		_, err := napping.Get(apiURL, &napping.Params{}, &results[i].Episodes, nil)
+		err := t.getWithErrorCheck(apiURL, results[i].Episodes)
 		if err != nil {
 			return results, err
 		}
@@ -77,29 +107,11 @@ func (t *TraktTV) ShowEpisodes(slugOrTvdbID string, seasons []int) ([]Season, er
 	return results, nil
 }
 
-// ShowSummary returns a show and all of it's Seasons and Episodes
-func (t *TraktTV) ShowSummary(slugOrTvdbID string) (*Show, error) {
-	s := t.genURL(TvSummaryURL, t.APIKey, slugOrTvdbID)
-	result := &Show{}
-	glog.Infof("Query %s\n", s)
-	_, err := napping.Get(s, &napping.Params{}, &result, nil)
-	return result, err
-}
-
-// TvSearch searches tv shows
-func (t *TraktTV) TvSearch(name string) ([]Show, error) {
-	s := t.genURL(TvSearchURL, t.APIKey, name, 10)
-	result := []Show{}
-	glog.Infof("Query %s\n", s)
-	_, err := napping.Get(s, &napping.Params{}, &result, nil)
-	return result, err
-}
-
 //MovieSearch searches Trakt.tv for movies matching the query
 func (t *TraktTV) MovieSearch(query string) ([]Movie, error) {
 	s := t.genURL(MovieSearchURL, t.APIKey, query, 10)
 	res := []Movie{}
-	_, err := napping.Get(s, &napping.Params{}, &res, nil)
+	err := t.getWithErrorCheck(s, &res)
 	return res, err
 }
 
@@ -107,38 +119,6 @@ func (t *TraktTV) MovieSearch(query string) ([]Movie, error) {
 func (t *TraktTV) GetMovieByIMDB(imdbID string) (*Movie, error) {
 	s := t.genURL(MovieSummaryURL, t.APIKey, imdbID)
 	res := &Movie{}
-	_, err := napping.Get(s, &napping.Params{}, res, nil)
+	err := t.getWithErrorCheck(s, res)
 	return res, err
-}
-
-// HighlightBytePosition takes a reader and the location in bytes of a parse
-// error (for instance, from json.SyntaxError.Offset) and returns the line, column,
-// and pretty-printed context around the error with an arrow indicating the exact
-// position of the syntax error.
-func HighlightBytePosition(f io.Reader, pos int64) (line, col int, highlight string) {
-	line = 1
-	br := bufio.NewReader(f)
-	lastLine := ""
-	thisLine := new(bytes.Buffer)
-	for n := int64(0); n < pos; n++ {
-		b, err := br.ReadByte()
-		if err != nil {
-			break
-		}
-		if b == '\n' {
-			lastLine = thisLine.String()
-			thisLine.Reset()
-			line++
-			col = 1
-		} else {
-			col++
-			thisLine.WriteByte(b)
-		}
-	}
-	if line > 1 {
-		highlight += fmt.Sprintf("%5d: %s\n", line-1, lastLine)
-	}
-	highlight += fmt.Sprintf("%5d: %s\n", line, thisLine.String())
-	highlight += fmt.Sprintf("%s^\n", strings.Repeat(" ", col+5))
-	return
 }

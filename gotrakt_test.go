@@ -23,11 +23,11 @@ func TestTvSearch(t *testing.T) {
 			}))
 	defer ts.Close()
 
-	trakt, _ := NewTraktTV("testing")
+	trakt, _ := New("testing")
 	trakt.BaseURL = ts.URL
 
 	term := "Battlestar+Galactica"
-	res, err := trakt.TvSearch(term)
+	res, err := trakt.ShowSearch(term)
 	if err != nil {
 		t.Fatalf("Error searching: %s", err)
 	}
@@ -53,9 +53,9 @@ func TestTvSummary(t *testing.T) {
 			}))
 	defer ts.Close()
 
-	trakt, _ := NewTraktTV("anyapi")
+	trakt, _ := New("anyapi")
 	trakt.BaseURL = ts.URL
-	tvshow, err := trakt.ShowSummary("battlestar-galactica-2003")
+	tvshow, err := trakt.GetShow("battlestar-galactica-2003")
 
 	if serr, ok := err.(*json.SyntaxError); ok {
 		line, col, highlight := HighlightBytePosition(f, serr.Offset)
@@ -83,7 +83,7 @@ func TestMovieSearch(t *testing.T) {
 			}))
 	defer ts.Close()
 
-	trakt, _ := NewTraktTV("testing")
+	trakt, _ := New("testing")
 	trakt.BaseURL = ts.URL
 
 	term := "batman"
@@ -121,7 +121,7 @@ func TestMovieSummary(t *testing.T) {
 			}))
 	defer ts.Close()
 
-	trakt, _ := NewTraktTV("testing")
+	trakt, _ := New("testing")
 	trakt.BaseURL = ts.URL
 
 	m, err := trakt.GetMovieByIMDB("tt0133093")
