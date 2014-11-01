@@ -13,7 +13,7 @@ import (
 
 //https://trakt.tv/api-docs/search-shows
 var ShowSearchTempl = template.Must(
-	template.New("ShowSearch").Parse("{{.Host}}/search/shows.json/{{.APIKey|urlquery}}?query={{.Query | urlquery}}&limit={{.Limit|urlquery}}&seasons=true"),
+	template.New("ShowSearch").Parse("{{.Host}}/search/shows.json/{{.APIKey|urlquery}}?query={{.Query | urlquery}}&seasons=true"),
 )
 
 //http://trakt.tv/api-docs/show-summary
@@ -71,6 +71,15 @@ func Session(sess *napping.Session) option {
 	}
 }
 
+// Host sets the host to use for talking to TraktTV
+// This includes the protocol, hostname, port:
+// i.e. https://api.trakt.tv:443
+func Host(host string) option {
+	return func(t *TraktTV) {
+		t.BaseURL = host
+	}
+}
+
 func (t *TraktTV) getWithErrorCheck(url string, result interface{}) error {
 	glog.Infof("Get query for %s\n", url)
 	response, err := t.Session.Get(url, &napping.Params{}, result, nil)
@@ -109,7 +118,6 @@ func (t *TraktTV) GetShow(slugOrTvdbID string) (*Show, error) {
 func (t *TraktTV) ShowSearch(name string) ([]Show, error) {
 	args := map[string]string{
 		"Query": name,
-		"Limit": "10",
 	}
 	result := []Show{}
 	apiURL, err := t.getURLFromTemplate(ShowSearchTempl, args)
@@ -135,14 +143,14 @@ func (t *TraktTV) ShowSeasons(slugOrTvdbID string, seasons []int) ([]Season, err
 
 		args := map[string]string{
 			"Query":  slugOrTvdbID,
-			"Season": string(season),
+			"Season": fmt.Sprintf("%d", season),
 		}
 		apiURL, err := t.getURLFromTemplate(ShowSeasonTmpl, args)
 		if err != nil {
 			return results, err
 		}
 
-		err = t.getWithErrorCheck(apiURL, results[i].Episodes)
+		err = t.getWithErrorCheck(apiURL, &results[i].Episodes)
 		if err != nil {
 			return results, err
 		}
